@@ -1,0 +1,251 @@
+Customer Profile Report
+1. Report Purpose
+The Customer Profile Report provides a consolidated, 360‑degree view of each insurance customer.
+It combines data from multiple dimensions and fact tables to help business users analyze customer demographics, policy history, claim activity, and overall engagement.
+
+This is one of the most frequently used Business Objects reports in the Data Warehousing Insurance Group project.
+
+2. Data Sources Used
+Customer_Dim  
+Customer demographics, address, phone, SCD Type 2 history.
+
+Policy_Fact  
+Premium amounts, coverage, policy duration.
+
+Policy_Dim  
+Policy type, status, attributes.
+
+Claim_Fact  
+Claim amounts, settlement durations.
+
+Claim_Type_Dim  
+Claim category and severity.
+
+Date_Dim  
+Calendar hierarchy for policy and claim dates.
+
+3. Key Report Sections
+A. Customer Demographics
+Displays:
+
+Full name
+
+Gender
+
+Address
+
+Phone number
+
+Region
+
+Current vs historical records (SCD Type 2)
+
+B. Policy Summary
+Shows:
+
+Active policies
+
+Policy type
+
+Premium amount
+
+Coverage amount
+
+Policy duration
+
+Policy status (Active, Inactive, Lapsed)
+
+C. Claim Summary
+Includes:
+
+Total claims filed
+
+Claim categories
+
+Claim severity
+
+Claim amounts
+
+Settlement durations
+
+Year‑wise claim distribution
+
+D. Customer Lifetime Value (CLV) Indicators
+Derived metrics:
+
+Total premium paid
+
+Total claim amount
+
+Net contribution
+
+Risk category (based on claim frequency)
+
+4. BO Features Used in This Report
+Drill‑down from customer → policy → claim
+
+Prompts for filtering by:
+
+Customer ID
+
+Region
+
+Policy status
+
+Date range
+
+Cross‑tab tables for year‑wise analysis
+
+Charts for premium and claim trends
+
+Conditional formatting for high‑risk customers
+
+5. Sample BO Query Logic (Semantic Layer)
+Customer → Policy Join
+Code
+Customer_Dim.customer_key = Policy_Fact.customer_key
+Policy → Claim Join
+Code
+Policy_Fact.policy_key = Claim_Fact.policy_key
+Date Dimension Join
+Code
+Claim_Fact.date_key = Date_Dim.date_key
+6. Business Value
+The Customer Profile Report helps:
+
+Identify high‑value customers
+
+Detect high‑risk customers
+
+Understand customer behavior
+
+Support underwriting decisions
+
+Improve customer retention strategies
+
+It is a core operational and analytical report used by underwriting, claims, and customer service teams.Customer Profile Report
+1. Report Purpose
+The Customer Profile Report provides a consolidated, 360‑degree view of each insurance customer.
+It combines data from multiple dimensions and fact tables to help business users analyze customer demographics, policy history, claim activity, and overall engagement.
+
+This is one of the most frequently used Business Objects reports in the Data Warehousing Insurance Group project.
+
+2. Data Sources Used
+Customer_Dim  
+Customer demographics, address, phone, SCD Type 2 history.
+
+Policy_Fact  
+Premium amounts, coverage, policy duration.
+
+Policy_Dim  
+Policy type, status, attributes.
+
+Claim_Fact  
+Claim amounts, settlement durations.
+
+Claim_Type_Dim  
+Claim category and severity.
+
+Date_Dim  
+Calendar hierarchy for policy and claim dates.
+
+3. Key Report Sections
+A. Customer Demographics
+Displays:
+
+Full name
+
+Gender
+
+Address
+
+Phone number
+
+Region
+
+Current vs historical records (SCD Type 2)
+
+B. Policy Summary
+Shows:
+
+Active policies
+
+Policy type
+
+Premium amount
+
+Coverage amount
+
+Policy duration
+
+Policy status (Active, Inactive, Lapsed)
+
+C. Claim Summary
+Includes:
+
+Total claims filed
+
+Claim categories
+
+Claim severity
+
+Claim amounts
+
+Settlement durations
+
+Year‑wise claim distribution
+
+D. Customer Lifetime Value (CLV) Indicators
+Derived metrics:
+
+Total premium paid
+
+Total claim amount
+
+Net contribution
+
+Risk category (based on claim frequency)
+
+4. BO Features Used in This Report
+Drill‑down from customer → policy → claim
+
+Prompts for filtering by:
+
+Customer ID
+
+Region
+
+Policy status
+
+Date range
+
+Cross‑tab tables for year‑wise analysis
+
+Charts for premium and claim trends
+
+Conditional formatting for high‑risk customers
+
+5. Sample BO Query Logic (Semantic Layer)
+Customer → Policy Join
+Code
+Customer_Dim.customer_key = Policy_Fact.customer_key
+Policy → Claim Join
+Code
+Policy_Fact.policy_key = Claim_Fact.policy_key
+Date Dimension Join
+Code
+Claim_Fact.date_key = Date_Dim.date_key
+6. Business Value
+The Customer Profile Report helps:
+
+Identify high‑value customers
+
+Detect high‑risk customers
+
+Understand customer behavior
+
+Support underwriting decisions
+
+Improve customer retention strategies
+
+It is a core operational and analytical report used by underwriting, claims, and customer service teams.
