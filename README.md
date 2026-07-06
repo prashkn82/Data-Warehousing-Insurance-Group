@@ -120,20 +120,19 @@ Historical Data Maintenance using SCD techniques
 
 01_Project_Overview/
 02_Oracle_Database_Backend/
-03_Data_Warehouse_Design/
-04_Informatica_ETL_Workflows/
+03_Informatica_ETL_Workflows
+04_Data_Warehouse_Design/
 05_SCD_Implementation/
 06_SQL_PLUS_Queries/
 07_Business_Objects_Reporting/
-08_Architecture_Diagrams/
-09_Documentation/
+08_Documentation/
 README.md
 
 Each folder contains .md documentation and .sql scripts relevant to the project.
 
 📈 Key Outcomes
 
-Successfully built a centralized insurance data warehouse.
+Successfully built a centralised insurance data warehouse.
 
 Improved data consistency and historical tracking.
 
