@@ -1,60 +1,78 @@
-Project Overview
-1. Introduction
-The Data Warehousing Insurance Group project focuses on building a centralized data warehouse for an insurance organization. The goal is to integrate heterogeneous data sources, maintain historical records, and enable efficient reporting and analytics using industry‑standard tools such as Oracle 9i, Informatica PowerCenter, and Business Objects.
+# 🏢 Project Overview
 
-2. Objective
-Consolidate fragmented insurance data into a unified warehouse
+## 1️⃣ Introduction
 
-Implement ETL workflows to extract, cleanse, transform, and load data
+The **Data Warehousing Insurance Group** project focuses on building a **centralized data warehouse** for an insurance organization.
 
-Maintain historical changes using SCD Type 1, Type 2, and Type 3
+**Key goals of the project:**
 
-Design fact and dimension tables for analytical processing
+| Focus Area | Description |
+|---|---|
+| 🔗 Integration | Integrate **heterogeneous data sources** |
+| 🕘 History | Maintain **historical records** |
+| 📊 Analytics | Enable efficient **reporting and analytics** |
+| 🛠️ Tools | Built using **Oracle 9i, Informatica PowerCenter, and Business Objects** |
 
-Support business reporting through Business Objects dashboards
+---
 
-Ensure database reliability through Oracle DBA tasks and backup strategies
+## 2️⃣ Objective
 
-3. Scope of Work
-This project covers the complete data warehousing lifecycle:
+- ✅ Consolidate fragmented insurance data into a **unified warehouse**
+- ✅ Implement **ETL workflows** to extract, cleanse, transform, and load data
+- ✅ Maintain historical changes using **SCD Type 1, Type 2, and Type 3**
+- ✅ Design **fact and dimension tables** for analytical processing
+- ✅ Support **business reporting** through Business Objects dashboards
+- ✅ Ensure **database reliability** through Oracle DBA tasks and backup strategies
 
-Oracle 9i backend setup and administration
+---
 
-Informatica ETL development
+## 3️⃣ Scope of Work
 
-Dimensional modeling and schema design
+This project covers the **complete data warehousing lifecycle**:
 
-SCD implementation
+| Phase | Activity |
+|---|---|
+| 🗄️ Backend | Oracle 9i setup and administration |
+| 🔄 ETL | Informatica ETL development |
+| 🏗️ Modeling | Dimensional modeling and schema design |
+| 🕘 History | SCD implementation |
+| 🔍 Validation | SQL*PLUS data retrieval and validation |
+| 📈 Reporting | Business Objects reporting and analysis |
 
-SQL*PLUS data retrieval and validation
+---
 
-Business Objects reporting and analysis
+## 4️⃣ Problem Statement
 
-4. Problem Statement
-Insurance companies often store data across multiple systems, formats, and legacy databases. This leads to:
+Insurance companies often store data across **multiple systems, formats, and legacy databases**. This leads to:
 
-Data inconsistency
+- ⚠️ **Data inconsistency**
+- ⚠️ **Difficulty** in historical tracking
+- ⚠️ **Slow reporting** and decision-making
+- ⚠️ **Lack of unified visibility** across policies, claims, and customers
 
-Difficulty in historical tracking
+> This project solves these challenges by creating a **single source of truth** through a robust data warehouse. 🎯
 
-Slow reporting and decision-making
+---
 
-Lack of unified visibility across policies, claims, and customers
+## 5️⃣ Tools & Technologies
 
-This project solves these challenges by creating a single source of truth through a robust data warehouse.
+| Category | Technology |
+|---|---|
+| 🗄️ Database | Oracle 9i R2 (9.2.0.1) |
+| 🔄 ETL Tool | Informatica PowerCenter 7.0 |
+| 📊 Reporting | Business Objects 5.0 |
+| 💻 Query Tool | SQL*PLUS |
+| 🏗️ Modeling | Dimensional Modeling |
+| 🕘 Historical Tracking | SCD Types 1, 2, 3 |
 
-5. Tools & Technologies
-Oracle 9i R2 (9.2.0.1)
+---
 
-Informatica PowerCenter 7.0
+## 6️⃣ Outcome
 
-Business Objects 5.0
+The project successfully delivered a **functional insurance data warehouse** capable of:
 
-SQL*PLUS
+- 📦 Storing **integrated data**
+- 🕘 Maintaining **historical changes**
+- 📊 Supporting **analytical reporting**
 
-Dimensional Modeling
-
-SCD Types 1, 2, 3
-
-6. Outcome
-The project successfully delivered a functional insurance data warehouse capable of storing integrated data, maintaining historical changes, and supporting analytical reporting. It demonstrates strong skills in ETL development, Oracle DBA operations, data modeling, and BI reporting.
+> **Result:** It demonstrates strong skills in **ETL development, Oracle DBA operations, data modeling, and BI reporting**. 🚀
