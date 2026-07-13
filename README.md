@@ -1,11 +1,11 @@
-📊 Data Warehousing Project – Insurance Group
-
-🏢 Company
+📊** Data Warehousing Project – Insurance Group
+**
+🏢 **Company**
 
 InsuMan System
 
-🛠️ Technology Stack
-
+🛠️ **Technology Stack
+**
 Data Warehousing
 
 Oracle 9i R2 – 9.2.0.1
@@ -16,7 +16,7 @@ Business Objects 5.0 (BO)
 
 SQL*PLUS
 
-📘 Project Overview
+📘 **Project Overview**
 
 This academic project focuses on designing and implementing a Data Warehouse for an Insurance Group, enabling unified storage, integration, maintenance, and analysis of heterogeneous insurance data.
 
@@ -32,7 +32,7 @@ Faster reporting and analytics
 
 Improved decision‑making for insurance operations
 
-🎯 Objectives
+🎯** Objectives**
 
 Integrate heterogeneous insurance data into a single centralised warehouse.
 
@@ -46,7 +46,7 @@ Generate business reports using Business Objects.
 
 Maintain database integrity and performance using Oracle DBA best practices.
 
-👥 Team & Role
+👥** Team & Role**
 
 Team Size: 5 Members
 
@@ -54,69 +54,69 @@ Role: Jr. DBA / Developer
 
 Duration: 6 Months
 
-🔧 Responsibilities & Contributions
+🔧 **Responsibilities & Contributions**
 
 🗄️ Database (Oracle 9i) – Backend
 
 Designed and planned the Insurance Group Database.
 
-Installed and configured Oracle 9i software.
+- Installed and configured Oracle 9i software.
 
-Managed data files, control files, redo log files.
+- Managed data files, control files, redo log files.
 
-Created and maintained tablespaces, including resizing and renaming.
+- Created and maintained tablespaces, including resizing and renaming.
 
-Managed users, roles, and privileges.
+- Managed users, roles, and privileges.
 
-Created and maintained schema objects (tables, indexes, views).
+- Created and maintained schema objects (tables, indexes, views).
 
-Performed Export/Import at the table and schema level.
+- Performed Export/Import at the table and schema level.
 
-Monitored Alert Log files and applied corrective actions.
+- Monitored Alert Log files and applied corrective actions.
 
-Conducted User‑Managed Cold Backups weekly.
+- Conducted User‑Managed Cold Backups weekly.
 
-Performed RMAN Hot Backups on alternate days.
+- Performed RMAN Hot Backups on alternate days.
 
-🔄 Developer – ETL & Reporting
+🔄 **Developer – ETL & Reporting**
 
-Informatica PowerCenter 7.1
+- Informatica PowerCenter 7.1
 
-Integrated heterogeneous data into a single warehouse.
+- Integrated heterogeneous data into a single warehouse.
 
-Built ETL mappings using:
+- Built ETL mappings using:
 
-Expression Transformation
+- Expression Transformation
 
-Lookup Transformation
+- Lookup Transformation
 
-Filter Transformation
+- Filter Transformation
 
-Implemented SCD Type 1, Type 2, Type 3.
+-Implemented SCD Type 1, Type 2, Type 3.
 
-SQL*PLUS
+- SQL*PLUS
 
-Retrieved and validated data from multiple tables.
+- Retrieved and validated data from multiple tables.
 
-Business Objects 5.0
+- Business Objects 5.0
 
-Designed final reports and dashboards.
+- Designed final reports and dashboards.
 
-Performed analytical processing for insurance KPIs.
+- Performed analytical processing for insurance KPIs.
 
-🧱 Data Warehouse Architecture
+🧱 **Data Warehouse Architecture**
 
-Staging Area for raw data loading
+- Staging Area for raw data loading
 
-ETL Layer using Informatica
+- ETL Layer using Informatica
 
-Warehouse Layer with Fact & Dimension tables
+- Warehouse Layer with Fact & Dimension tables
 
-Reporting Layer using Business Objects
+- Reporting Layer using Business Objects
 
-Historical Data Maintenance using SCD techniques
+- Historical Data Maintenance using SCD techniques
 
-📂 Repository Structure
+📂 **Repository Structure**
 
 01_Project_Overview/
 02_Oracle_Database_Backend/
@@ -130,24 +130,25 @@ README.md
 
 Each folder contains .md documentation and .sql scripts relevant to the project.
 
-📈 Key Outcomes
+📈 **Key Outcomes**
 
-Successfully built a centralised insurance data warehouse.
+- Successfully built a centralised insurance data warehouse.
 
-Improved data consistency and historical tracking.
+- Improved data consistency and historical tracking.
 
-Enabled faster and more accurate reporting.
+- Enabled faster and more accurate reporting.
 
-Demonstrated strong skills in Oracle DBA, ETL, and BI Reporting.
+- Demonstrated strong skills in Oracle DBA, ETL, and BI Reporting.
 
-📜 License
+📜 **License**
 
 This project is part of academic work and intended for learning, documentation, and portfolio showcase.
 
-🙌 Acknowledgements
+🙌 **Acknowledgements**
 
 Special thanks to the project team, faculty mentors, and InsuMan System for providing the platform to execute this project.
 
-📬 Contact
+👨‍💻 **Author**
 
-PrashanthData Analyst | ETL Developer | SQL SpecialistGitHub: github.com/prashkn82
+**Prashanth Kannan
+Junior Oracle DBA | Oracle Database 9i | SQL | ETL Developer | Business Object**
