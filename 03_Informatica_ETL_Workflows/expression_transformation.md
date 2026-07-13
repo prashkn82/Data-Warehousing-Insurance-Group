@@ -1,62 +1,79 @@
-Expression Transformation
-1. Introduction
-The Expression Transformation is one of the most frequently used components in Informatica PowerCenter. It allows row‑level manipulation of data, enabling cleansing, formatting, derivation, and application of business rules before loading data into the warehouse.
+# 🧮 Expression Transformation
 
-This transformation plays a crucial role in the Data Warehousing Insurance Group project, especially for preparing policy, customer, and claims data.
+> Row-level data cleansing, derivation, and business rule logic in **Informatica PowerCenter**.
 
-2. Key Use Cases
-Data Cleansing  
-Removing unwanted characters, trimming spaces, correcting formats.
+---
 
-Data Derivation  
-Creating new fields such as full names, age, policy duration, claim category.
+## 1️⃣ Introduction
 
-Conditional Logic  
-Applying IIF statements to categorize or validate data.
+The **Expression Transformation** is one of the most frequently used components in Informatica PowerCenter. It allows **row-level manipulation** of data, enabling cleansing, formatting, derivation, and application of business rules before loading data into the warehouse.
 
-Date Formatting  
-Converting legacy date formats into warehouse‑standard formats.
+This transformation plays a **crucial role** in the Data Warehousing Insurance Group project, especially for preparing **policy, customer, and claims data**.
 
-Business Rule Implementation  
-Mapping raw values to standardized insurance codes.
+---
 
-3. Common Functions Used
-IIF() – Conditional logic
+## 2️⃣ Key Use Cases
 
-LTRIM(), RTRIM(), TRIM() – Space removal
+| Use Case | Description |
+|---|---|
+| 🧹 Data Cleansing | Removing unwanted characters, trimming spaces, correcting formats |
+| 🏗️ Data Derivation | Creating new fields such as full names, age, policy duration, claim category |
+| 🔀 Conditional Logic | Applying `IIF` statements to categorize or validate data |
+| 📅 Date Formatting | Converting legacy date formats into warehouse-standard formats |
+| 📋 Business Rule Implementation | Mapping raw values to standardized insurance codes |
 
-TO_DATE() – Date conversion
+---
 
-UPPER(), LOWER() – Case formatting
+## 3️⃣ Common Functions Used
 
-SUBSTR() – Extracting parts of strings
+| Function | Purpose |
+|---|---|
+| `IIF()` | Conditional logic |
+| `LTRIM()`, `RTRIM()`, `TRIM()` | Space removal |
+| `TO_DATE()` | Date conversion |
+| `UPPER()`, `LOWER()` | Case formatting |
+| `SUBSTR()` | Extracting parts of strings |
+| `REPLACE()` | Value substitution |
 
-REPLACE() – Value substitution
+---
 
-4. Sample Expression Logic
-Full Name Creation
-Code
+## 4️⃣ Sample Expression Logic
+
+### 🔹 Full Name Creation
+```sql
 FULL_NAME = FIRST_NAME || ' ' || LAST_NAME
-Policy Status Standardization
-Code
+```
+
+### 🔹 Policy Status Standardization
+```sql
 POLICY_STATUS_STD = IIF(POLICY_STATUS = 'A', 'ACTIVE',
                         IIF(POLICY_STATUS = 'I', 'INACTIVE', 'UNKNOWN'))
-Claim Age Calculation
-Code
+```
+
+### 🔹 Claim Age Calculation
+```sql
 CLAIM_AGE = SYSDATE - CLAIM_DATE
-Date Format Conversion
-Code
+```
+
+### 🔹 Date Format Conversion
+```sql
 POLICY_START_DT = TO_DATE(POLICY_START_RAW, 'MM/DD/YYYY')
-5. Best Practices
-Keep expressions simple and readable
+```
 
-Use comments inside the transformation for clarity
+---
 
-Avoid overly complex nested IIF statements
+## 5️⃣ Best Practices
 
-Validate output using session logs and SQL*PLUS
+- ✅ Keep expressions **simple and readable**
+- ✅ Use **comments** inside the transformation for clarity
+- ✅ Avoid **overly complex nested `IIF`** statements
+- ✅ Validate output using **session logs and SQL\*PLUS**
+- ✅ Standardize **date and numeric formats** across all mappings
 
-Standardize date and numeric formats across all mappings
+---
 
-6. Outcome
-The Expression Transformation ensures that all insurance data entering the warehouse is clean, standardized, and ready for analytical processing. It forms the foundation for accurate reporting and reliable ETL workflows.
+## 6️⃣ Outcome
+
+The Expression Transformation ensures that all insurance data entering the warehouse is **clean, standardized, and ready** for analytical processing.
+
+> It forms the **foundation** for accurate reporting and reliable ETL workflows. 🚀
