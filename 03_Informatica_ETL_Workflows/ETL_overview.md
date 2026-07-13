@@ -22,6 +22,9 @@ The ETL workflow follows a structured pipeline:
 | 🔧 **Transformation** | Business rules, data cleansing, validation, and SCD logic are applied using Informatica transformations |
 | 📥 **Loading** | Processed data is loaded into dimension and fact tables within the Oracle 9i warehouse |
 
+<img width="691" height="550" alt="image" src="https://github.com/user-attachments/assets/ff7958d4-2d9b-47ea-8e5e-41c92d3a8114" />
+
+
 ```
    Source Systems  →  📤 Extract  →  🔧 Transform  →  📥 Load  →  Oracle 9i Warehouse
 ```
