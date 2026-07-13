@@ -1,47 +1,60 @@
-📊 Business Problem
-1. Background
-Insurance companies typically operate multiple systems for policy management, claims processing, customer information, and financial transactions. These systems often store data in different formats, databases, and legacy applications, making it difficult to achieve unified reporting and analytics.
+# 📊 Business Problem
 
-2. Key Challenges
-Data Fragmentation  
-Information is scattered across various operational systems, leading to inconsistent and incomplete views of customers and policies.
+## 1️⃣ Background
 
-Lack of Historical Tracking  
-Traditional OLTP systems overwrite old data, making it impossible to analyze historical changes in customer profiles, policy updates, or claim statuses.
+Insurance companies typically operate **multiple systems** for policy management, claims processing, customer information, and financial transactions. These systems often store data in **different formats, databases, and legacy applications**, making it difficult to achieve **unified reporting and analytics**.
 
-Slow and Manual Reporting  
-Business teams rely on manual data extraction and spreadsheets, resulting in delays and errors in decision‑making.
+---
 
-No Single Source of Truth  
-Different departments maintain their own datasets, causing discrepancies in reports and KPIs.
+## 2️⃣ Key Challenges
 
-Limited Analytical Capability  
-Without a centralized warehouse, advanced analytics such as trend analysis, risk assessment, and performance monitoring become difficult.
+### 🧩 Data Fragmentation
+Information is scattered across various operational systems, leading to **inconsistent and incomplete views** of customers and policies.
 
-3. Business Need
-The insurance organization requires a centralized data warehouse that can:
+### 🕒 Lack of Historical Tracking
+Traditional **OLTP systems overwrite old data**, making it impossible to analyze historical changes in customer profiles, policy updates, or claim statuses.
 
-Integrate data from multiple heterogeneous sources
+### 🐢 Slow and Manual Reporting
+Business teams rely on **manual data extraction and spreadsheets**, resulting in delays and errors in decision-making.
 
-Maintain historical records using SCD techniques
+### 🔀 No Single Source of Truth
+Different departments maintain their **own datasets**, causing discrepancies in reports and KPIs.
 
-Provide accurate and consistent reporting
+### 📉 Limited Analytical Capability
+Without a centralized warehouse, **advanced analytics** — such as trend analysis, risk assessment, and performance monitoring — become difficult.
 
-Support analytical dashboards for business decision‑making
+| Challenge | Impact |
+|---|---|
+| Data Fragmentation | Inconsistent, incomplete views |
+| No Historical Tracking | Cannot analyze trends over time |
+| Manual Reporting | Delays and errors |
+| No Single Source of Truth | Conflicting KPIs across teams |
+| Limited Analytics | Poor risk & performance visibility |
 
-Improve operational efficiency and reduce manual effort
+---
 
-4. Solution Overview
-This project delivers a complete data warehousing solution using:
+## 3️⃣ Business Need
 
-Oracle 9i for backend storage
+The insurance organization requires a **centralized data warehouse** that can:
 
-Informatica PowerCenter for ETL workflows
+- ✅ Integrate data from multiple **heterogeneous sources**
+- ✅ Maintain **historical records** using SCD techniques
+- ✅ Provide **accurate and consistent** reporting
+- ✅ Support **analytical dashboards** for business decision-making
+- ✅ Improve **operational efficiency** and reduce manual effort
 
-Business Objects for reporting and analytics
+---
 
-Dimensional modeling for structured analysis
+## 4️⃣ Solution Overview
 
-SCD Types 1, 2, 3 for historical tracking
+This project delivers a **complete data warehousing solution** using:
 
-The result is a unified, reliable, and scalable data warehouse that supports the insurance group’s analytical and reporting needs.
+| Component | Technology |
+|---|---|
+| 🗄️ Backend Storage | Oracle 9i |
+| 🔄 ETL Workflows | Informatica PowerCenter |
+| 📈 Reporting & Analytics | Business Objects |
+| 🏗️ Data Modeling | Dimensional Modeling |
+| 🕘 Historical Tracking | SCD Types 1, 2, 3 |
+
+> **Result:** A **unified, reliable, and scalable** data warehouse that supports the insurance group's analytical and reporting needs. 🚀
