@@ -92,7 +92,7 @@ Designed and planned the Insurance Group Database.
 
 - Filter Transformation
 
--Implemented SCD Type 1, Type 2, Type 3.
+- Implemented SCD Type 1, Type 2, Type 3.
 
 - SQL*PLUS
 
