@@ -32,7 +32,7 @@ Faster reporting and analytics
 
 Improved decision‑making for insurance operations
 
-🎯** Objectives**
+🎯**Objectives**
 
 Integrate heterogeneous insurance data into a single centralised warehouse.
 
