@@ -1,94 +1,102 @@
-Oracle Installation Steps
-1. Pre‑Installation Requirements
-Windows OS with administrative privileges
+# 🖥️ Oracle Installation Steps
 
-Minimum 2 GB RAM (recommended 4 GB)
+> Step-by-step guide to installing and configuring **Oracle 9i** as the backend database for the **Insurance Data Warehouse** project.
 
-Sufficient disk space for Oracle binaries and database files
+---
 
-Disable antivirus during installation to avoid file‑locking issues
+## 1️⃣ Pre-Installation Requirements
 
-Ensure system username has no special characters (Oracle requirement)
+| Requirement | Details |
+|---|---|
+| 🪟 OS | Windows OS with administrative privileges |
+| 💾 RAM | Minimum 2 GB (recommended **4 GB**) |
+| 💽 Disk Space | Sufficient for Oracle binaries and database files |
+| 🛡️ Antivirus | Disable during installation to avoid file-locking issues |
+| 👤 Username | No special characters (Oracle requirement) |
 
-2. Software Components
-Oracle 9i Release 2 (9.2.0.1)
+---
 
-Oracle Universal Installer (OUI)
+## 2️⃣ Software Components
 
-Database Configuration Assistant (DBCA)
+- 🗄️ **Oracle 9i Release 2** (9.2.0.1)
+- ⚙️ **Oracle Universal Installer** (OUI)
+- 🧰 **Database Configuration Assistant** (DBCA)
+- 🌐 **Net Configuration Assistant** (NETCA)
 
-Net Configuration Assistant (NETCA)
+---
 
-3. Installation Procedure
-Step 1: Launch Oracle Universal Installer
-Insert Oracle installation media or mount the ISO
+## 3️⃣ Installation Procedure
 
-Run setup.exe
+### 🔹 Step 1: Launch Oracle Universal Installer
+- 💿 Insert Oracle installation media or mount the ISO
+- ▶️ Run `setup.exe`
+- ✅ OUI performs prerequisite checks
+- 📥 Choose **Install/Deinstall Products**
 
-OUI performs prerequisite checks
+### 🔹 Step 2: Select Installation Type
+- 🏢 Choose **Enterprise Edition** (recommended for DW projects)
+- 📁 Use default installation paths unless customization is required
 
-Choose Install/Deinstall Products
+### 🔹 Step 3: Install Database Software
+- OUI copies files and configures **Oracle Home**
+- After installation, choose **Create a Database using DBCA**
 
-Step 2: Select Installation Type
-Choose:
+### 🔹 Step 4: Create the Database (DBCA)
 
-Enterprise Edition (recommended for DW projects)
+| Setting | Value |
+|---|---|
+| Database Type | General Purpose |
+| SID | `INSU_DW` |
+| Archive Log Mode | ✅ Enabled (recommended for DW) |
+| Memory Settings | Configure SGA/PGA |
+| Sample Schemas | Create if needed |
 
-Default installation paths unless customization is required
+### 🔹 Step 5: Configure Network (NETCA)
 
-Step 3: Install Database Software
-OUI copies files and configures Oracle Home
+| Setting | Value |
+|---|---|
+| Listener Name | `LISTENER` |
+| Default Port | `1521` |
+| Protocol | `TCP` |
 
-After installation, choose Create a Database using DBCA
+Verify listener status:
 
-Step 4: Create the Database (DBCA)
-Select General Purpose database
-
-Set SID: INSU_DW
-
-Enable Archive Log Mode (recommended for DW)
-
-Configure memory settings (SGA/PGA)
-
-Create sample schemas if needed
-
-Step 5: Configure Network (NETCA)
-Create a listener named LISTENER
-
-Default port: 1521
-
-Protocol: TCP
-
-Verify listener status using:
-
-Code
+```bash
 lsnrctl status
-Step 6: Post‑Installation Tasks
-Add Oracle environment variables:
+```
 
-ORACLE_HOME
+### 🔹 Step 6: Post-Installation Tasks
 
-ORACLE_SID
+**Add Oracle environment variables:**
+- `ORACLE_HOME`
+- `ORACLE_SID`
+- `PATH` update
 
-PATH update
+**Test SQL\*PLUS connectivity:**
 
-Test SQL*PLUS connectivity:
-
-Code
+```sql
 sqlplus /nolog
 connect sys as sysdba
-4. Verification
-Check database status:
+```
 
-Code
-select status from v$instance;
-Validate listener:
+---
 
-Code
-lsnrctl status
-Confirm data dictionary views are accessible:
+## 4️⃣ Verification
 
-Code
-select * from dba_tables;
-5. Outcome
-Oracle 9i is successfully installed and configured as the backend database for the Data Warehousing Insurance Group project, supporting ETL loads, schema design, and reporting.
+| Check | Command |
+|---|---|
+| 🟢 Database status | `select status from v$instance;` |
+| 🌐 Listener status | `lsnrctl status` |
+| 📂 Data dictionary access | `select * from dba_tables;` |
+
+---
+
+## 5️⃣ Outcome
+
+**Oracle 9i** is successfully installed and configured as the backend database for the **Data Warehousing Insurance Group** project, supporting:
+
+- 🔄 ETL loads
+- 🏗️ Schema design
+- 📊 Reporting
+
+> A solid database foundation is now in place for the entire warehouse build. ✅
