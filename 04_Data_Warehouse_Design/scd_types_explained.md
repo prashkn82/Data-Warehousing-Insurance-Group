@@ -1,115 +1,108 @@
-Slowly Changing Dimensions (SCD) Explained
-1. Introduction
-Slowly Changing Dimensions (SCD) are essential for maintaining historical accuracy in a data warehouse—insurance data — such as customer details, policy attributes, and agent information — changes over time.
-SCD techniques ensure that these changes are captured correctly for reporting and trend analysis.
+# 🕘 Slowly Changing Dimensions (SCD) Explained
 
-This file explains SCD Types 1, 2, and 3, all of which were implemented in the Data Warehousing Insurance Group project.
+> How the **Insurance Data Warehouse** captures and preserves historical changes in customer, policy, and agent data.
 
-2. Why SCD Matters in Insurance DW
-Insurance operations rely heavily on historical tracking:
+---
 
-Customer address changes
+## 1️⃣ Introduction
 
-Policy status updates
+**Slowly Changing Dimensions (SCD)** are essential for maintaining historical accuracy in a data warehouse — insurance data such as **customer details, policy attributes, and agent information** changes over time.
 
-Premium adjustments
+SCD techniques ensure that these changes are captured correctly for **reporting and trend analysis**.
 
-Claim category reclassification
+This file explains **SCD Types 1, 2, and 3**, all of which were implemented in the Data Warehousing Insurance Group project.
 
-Without SCD, reports would display incorrect historical values, resulting in inaccurate business insights.
+---
 
-3. SCD Type 1 — Overwrite Changes
-Definition
-Updates the existing record by overwriting old values.
-No history is maintained.
+## 2️⃣ Why SCD Matters in Insurance DW
 
-Use Cases
-Correcting data errors
+Insurance operations rely heavily on **historical tracking**:
 
-Updating non‑critical attributes
+- 🏠 Customer address changes
+- 📋 Policy status updates
+- 💳 Premium adjustments
+- 🏷️ Claim category reclassification
 
-Standardizing codes or descriptions
+> ⚠️ Without SCD, reports would display **incorrect historical values**, resulting in inaccurate business insights.
 
-Example
-Customer changes phone number → old number is replaced.
+---
 
-Pros
-Simple
+## 3️⃣ SCD Type 1 — Overwrite Changes
 
-Fast
+**Definition:** Updates the existing record by overwriting old values. **No history is maintained.**
 
-Minimal storage
+**Use Cases**
+- Correcting data errors
+- Updating non-critical attributes
+- Standardizing codes or descriptions
 
-Cons
-No historical tracking
+**Example:** Customer changes phone number → old number is replaced.
 
-4. SCD Type 2 — Full History Tracking
-Definition
-Creates a new record whenever a change occurs.
-Maintains complete historical data.
+| ✅ Pros | ❌ Cons |
+|---|---|
+| Simple | No historical tracking |
+| Fast | |
+| Minimal storage | |
 
-Use Cases
-Customer address changes
+---
 
-Policy coverage updates
+## 4️⃣ SCD Type 2 — Full History Tracking
 
-Agent region changes
+**Definition:** Creates a **new record** whenever a change occurs. Maintains **complete historical data**.
 
-Common Columns
-effective_start_date
+**Use Cases**
+- Customer address changes
+- Policy coverage updates
+- Agent region changes
 
-effective_end_date
+**Common Columns**
+- `effective_start_date`
+- `effective_end_date`
+- `current_flag`
 
-current_flag
+| ✅ Pros | ❌ Cons |
+|---|---|
+| Full historical accuracy | More storage |
+| Ideal for analytical reporting | More ETL complexity |
 
-Pros
-Full historical accuracy
+---
 
-Ideal for analytical reporting
+## 5️⃣ SCD Type 3 — Limited History
 
-Cons
-More storage
+**Definition:** Stores only the **previous value** along with the current value.
 
-More ETL complexity
+**Use Cases**
+- Tracking only the last change
+- Attributes where a full history is not required
 
-5. SCD Type 3 — Limited History
-Definition
-Stores only the previous value along with the current value.
+**Example Columns**
+- `current_policy_status`
+- `previous_policy_status`
 
-Use Cases
-Tracking only the last change
+| ✅ Pros | ❌ Cons |
+|---|---|
+| Less storage than Type 2 | Only one level of history |
+| Simple to implement | |
 
-Attributes where a full history is not required
+---
 
-Example Columns
-current_policy_status
+## 6️⃣ SCD Comparison Table
 
-previous_policy_status
+| SCD Type | History Maintained | Storage | Complexity | Best For |
+|---|---|---|---|---|
+| **Type 1** | ❌ No | 🟢 Low | 🟢 Low | Corrections, non-critical changes |
+| **Type 2** | ✅ Full | 🔴 High | 🟡 Medium | Customer, Policy, Agent history |
+| **Type 3** | 🟡 Partial | 🟡 Medium | 🟢 Low | Limited historical tracking |
 
-Pros
-Less storage than Type 2
+---
 
-Simple to implement
+## 7️⃣ Outcome
 
-Cons
-Only one level of history
+SCD implementation ensures that the insurance data warehouse **accurately reflects historical changes**. This enables:
 
-6. SCD Comparison Table
-SCD Type	History Maintained	Storage	Complexity	Best For
-Type 1	No	Low	Low	Corrections, non‑critical changes
-Type 2	Full	High	Medium	Customer, Policy, Agent history
-Type 3	Partial	Medium	Low	Limited historical tracking
+- 📈 Trend analysis
+- 👤 Customer behavior tracking
+- 📋 Policy evolution reporting
+- 🎯 Accurate claim analytics
 
-
-7. Outcome
-SCD implementation ensures that the insurance data warehouse accurately reflects historical changes. This enables:
-
-Trend analysis
-
-Customer behavior tracking
-
-Policy evolution reporting
-
-Accurate claim analytics
-
-SCD is a core component of reliable insurance data warehousing.
+> SCD is a **core component** of reliable insurance data warehousing. 🚀
