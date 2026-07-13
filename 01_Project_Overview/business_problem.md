@@ -1,4 +1,4 @@
-Business Problem
+📊 Business Problem
 1. Background
 Insurance companies typically operate multiple systems for policy management, claims processing, customer information, and financial transactions. These systems often store data in different formats, databases, and legacy applications, making it difficult to achieve unified reporting and analytics.
 
