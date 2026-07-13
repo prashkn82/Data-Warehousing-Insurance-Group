@@ -112,14 +112,6 @@ CUST_ID | CURRENT_POLICY_STATUS | PREVIOUS_POLICY_STATUS
 <img width="627" height="215" alt="image" src="https://github.com/user-attachments/assets/0cc2481f-8f55-4843-9019-91f649d9c1e2" />
 
 
-Does the attribute need a full audit history?
-        │
-        ├── No, just fix errors  →  Type 1
-        │
-        ├── Yes, complete history needed  →  Type 2
-        │
-        └── Only need "before vs after"  →  Type 3
-
 ---
 
 **Outcome**
