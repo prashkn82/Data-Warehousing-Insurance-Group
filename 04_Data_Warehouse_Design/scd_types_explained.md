@@ -107,7 +107,8 @@ CUST_ID | CURRENT_POLICY_STATUS | PREVIOUS_POLICY_STATUS
 
 ---
 
-**7️⃣ Which SCD Type Should You Use?**
+## 7️⃣ Which SCD Type Should You Use?**
+
 Does the attribute need a full audit history?
         │
         ├── No, just fix errors  →  Type 1
