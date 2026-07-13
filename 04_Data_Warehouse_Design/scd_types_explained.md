@@ -31,24 +31,31 @@ Insurance operations rely heavily on **historical tracking**:
 
 **Definition:** Updates the existing record by overwriting old values. **No history is maintained.**
 
+BEFORE:  CUST_ID=101   PHONE=555-0100
+AFTER:   CUST_ID=101   PHONE=555-9999   ← old value gone forever
+
 **Use Cases**
 - Correcting data errors
 - Updating non-critical attributes
-- Standardizing codes or descriptions
+- Standardising codes or descriptions
 
 **Example:** Customer changes phone number → old number is replaced.
 
 | ✅ Pros | ❌ Cons |
 |---|---|
 | Simple | No historical tracking |
-| Fast | |
-| Minimal storage | |
+| Fast | Cannot audit past values |
+| Minimal storage | Not suitable for trend analysis |
 
 ---
 
 ## 4️⃣ SCD Type 2 — Full History Tracking
 
 **Definition:** Creates a **new record** whenever a change occurs. Maintains **complete historical data**.
+
+CUST_ID | ADDRESS        | EFFECTIVE_START | EFFECTIVE_END | CURRENT_FLAG
+101     | 12 Elm St      | 2022-01-01       | 2023-06-14    | N
+101     | 88 Oak Ave     | 2023-06-15       | NULL          | Y
 
 **Use Cases**
 - Customer address changes
@@ -64,12 +71,16 @@ Insurance operations rely heavily on **historical tracking**:
 |---|---|
 | Full historical accuracy | More storage |
 | Ideal for analytical reporting | More ETL complexity |
+| Supports point-in-time queries |Requires surrogate keys |
 
 ---
 
 ## 5️⃣ SCD Type 3 — Limited History
 
 **Definition:** Stores only the **previous value** along with the current value.
+
+CUST_ID | CURRENT_POLICY_STATUS | PREVIOUS_POLICY_STATUS
+101     | ACTIVE                 | LAPSED
 
 **Use Cases**
 - Tracking only the last change
@@ -96,7 +107,18 @@ Insurance operations rely heavily on **historical tracking**:
 
 ---
 
-## 7️⃣ Outcome
+**7️⃣ Which SCD Type Should You Use?**
+Does the attribute need a full audit history?
+        │
+        ├── No, just fix errors  →  Type 1
+        │
+        ├── Yes, complete history needed  →  Type 2
+        │
+        └── Only need "before vs after"  →  Type 3
+
+---
+
+**Outcome**
 
 SCD implementation ensures that the insurance data warehouse **accurately reflects historical changes**. This enables:
 
