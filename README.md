@@ -1,20 +1,16 @@
-📊** Data Warehousing Project – Insurance Group
-**
-🏢 **Company**
+📊**Data Warehousing Project – InsuMan System**
 
-InsuMan System
+🛠️ **Technology Stack**
 
-🛠️ **Technology Stack
-**
-Data Warehousing
+- Data Warehousing
 
-Oracle 9i R2 – 9.2.0.1
+- Oracle 9i R2 – 9.2.0.1
 
-Informatica PowerCenter 7.0
+- Informatica PowerCenter 7.0
 
-Business Objects 5.0 (BO)
+- Business Objects 5.0 (BO)
 
-SQL*PLUS
+- SQL*PLUS
 
 📘 **Project Overview**
 
