@@ -11,8 +11,8 @@
 | 🗄️ Database | Oracle | 9i R2 (9.2.0.1) |
 | 🔄 ETL | Informatica PowerCenter | 7.0 |
 | 📊 Reporting/BI | Business Objects | 5.0 |
-| 💻 Query Interface | SQL\*PLUS | — |
-| 🖥️ Platform | Windows | — |
+| 💻 Query Interface | SQL\*PLUS | Oracle DB 9i |
+| 🖥️ Platform | Windows | Windows Vista |
 
 ---
 
