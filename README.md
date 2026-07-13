@@ -46,7 +46,7 @@ Generate business reports using Business Objects.
 
 Maintain database integrity and performance using Oracle DBA best practices.
 
-👥** Team & Role**
+👥**Team & Role**
 
 Team Size: 5 Members
 
