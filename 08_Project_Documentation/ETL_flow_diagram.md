@@ -1,122 +1,91 @@
-ETL Flow Diagram (Conceptual Documentation)
-1. Introduction
-This document explains the end‑to‑end ETL flow used in the Data Warehousing Insurance Group project.
-It captures how data moves from source systems → staging → transformations → warehouse → reporting.
+# 🔄 ETL Flow Diagram (Conceptual Documentation)
 
-A visual ETL diagram helps developers, analysts, and auditors understand the complete data pipeline.
+> The end-to-end data pipeline for the **Insurance Data Warehouse** — from source systems to business reporting.
 
-2. High‑Level ETL Architecture
+---
 
+## 1️⃣ Introduction
 
+This document explains the **end-to-end ETL flow** used in the Data Warehousing Insurance Group project. It captures how data moves through:
 
+```
+Source Systems → Staging → Transformations → Warehouse → Reporting
+```
 
-Components
-Source Systems  
-Policy, Claims, Customer, Agent systems.
+> A visual ETL diagram helps developers, analysts, and auditors understand the **complete data pipeline**.
 
-Staging Area (Oracle Staging Tables)  
-Raw extracted data loaded without transformations.
+---
 
-Informatica ETL Layer
+## 2️⃣ High-Level ETL Architecture
 
-Source Qualifier
+![ETL flow diagram](etl_flow_diagram_full.svg)
 
-Lookups
+### 🧩 Components
 
-Expressions
+| Layer | Details |
+|---|---|
+| 🏢 Source Systems | Policy, Claims, Customer, Agent systems |
+| 📥 Staging Area (Oracle) | Raw extracted data loaded without transformations |
+| 🔄 Informatica ETL Layer | Source Qualifier, Lookups, Expressions, Aggregators, Update Strategy, SCD Type 1 & 2 logic, Workflows & Sessions |
+| 🗄️ Data Warehouse (Oracle 9i) | Fact tables, Dimension tables, SCD history |
+| 📊 Business Objects Reporting Layer | Universe, WebI reports, Dashboards |
 
-Aggregators
+---
 
-Update Strategy
+## 3️⃣ Detailed ETL Flow Description
 
-SCD Type 1 & Type 2 logic
+### 🔹 Step 1 — Data Extraction
+- Informatica connects to source systems
+- Data pulled using **Source Qualifier**
+- Loaded into staging tables **without transformations**
 
-Workflows & Sessions
-
-Data Warehouse (Oracle 9i)
-
-Fact tables
-
-Dimension tables
-
-SCD history
-
-Business Objects Reporting Layer
-
-Universe
-
-WebI reports
-
-Dashboards
-
-3. Detailed ETL Flow Description
-Step 1 — Data Extraction
-Informatica connects to source systems.
-
-Data pulled using Source Qualifier.
-
-Loaded into staging tables without transformations.
-
-Step 2 — Data Cleansing
+### 🔹 Step 2 — Data Cleansing
 Performed using:
-
-Expression Transformation
-
-Lookup Transformation
-
-Filter Transformation
+- Expression Transformation
+- Lookup Transformation
+- Filter Transformation
 
 Cleansing includes:
+- ✅ Removing duplicates
+- ✅ Standardizing formats
+- ✅ Validating mandatory fields
 
-Removing duplicates
+### 🔹 Step 3 — SCD Handling
 
-Standardizing formats
+| SCD Type | Action |
+|---|---|
+| Type 1 | Overwrite non-critical attributes |
+| Type 2 | Insert new historical records |
+| Type 3 | Maintain limited history |
 
-Validating mandatory fields
+### 🔹 Step 4 — Fact Table Loading
+- Aggregations performed using **Aggregator Transformation**
+- Surrogate keys resolved via **Lookup**
+- Loaded into:
+  - `Policy_Fact`
+  - `Claim_Fact`
 
-Step 3 — SCD Handling
-Type 1 → Overwrite non‑critical attributes
+### 🔹 Step 5 — Dimension Table Loading
+- `Customer_Dim`
+- `Policy_Dim`
+- `Agent_Dim`
+- `Claim_Type_Dim`
+- `Date_Dim`
 
-Type 2 → Insert new historical records
+### 🔹 Step 6 — Workflow Execution
+- Workflows scheduled **daily**
+- Sessions monitored via **Workflow Monitor**
+- Error logs captured for debugging
 
-Type 3 → Maintain limited history
+### 🔹 Step 7 — Reporting Layer
+- BO Universe maps DW tables
+- Reports & dashboards built using **WebI**
 
-Step 4 — Fact Table Loading
-Aggregations performed using Aggregator Transformation
+---
 
-Surrogate keys resolved via Lookup
+## 4️⃣ Conceptual ETL Flow Diagram (Textual Representation)
 
-Loaded into:
-
-Policy_Fact
-
-Claim_Fact
-
-Step 5 — Dimension Table Loading
-Customer_Dim
-
-Policy_Dim
-
-Agent_Dim
-
-Claim_Type_Dim
-
-Date_Dim
-
-Step 6 — Workflow Execution
-Workflows scheduled daily
-
-Sessions monitored via Workflow Monitor
-
-Error logs captured for debugging
-
-Step 7 — Reporting Layer
-BO Universe maps DW tables
-
-Reports & dashboards built using WebI
-
-4. Conceptual ETL Flow Diagram (Textual Representation)
-Code
+```
           +------------------+
           |  Source Systems  |
           +------------------+
@@ -153,17 +122,22 @@ Code
           +------------------+
           | Reports & Dash   |
           +------------------+
-5. Business Value of ETL Flow
-Ensures clean, validated, reliable data
+```
 
-Maintains historical accuracy via SCD
+---
 
-Enables fast reporting and analytics
+## 5️⃣ Business Value of ETL Flow
 
-Provides a single source of truth
+- ✅ Ensures clean, validated, reliable data
+- 🕘 Maintains historical accuracy via SCD
+- ⚡ Enables fast reporting and analytics
+- 🎯 Provides a single source of truth
+- 📋 Supports regulatory compliance
 
-Supports regulatory compliance
+---
 
-6. Outcome
-This ETL flow forms the backbone of the insurance data warehouse.
-It ensures that data is consistently extracted, transformed, and loaded into a structure optimized for analytics and reporting.
+## 6️⃣ Outcome
+
+This ETL flow forms the **backbone** of the insurance data warehouse.
+
+> It ensures that data is consistently extracted, transformed, and loaded into a structure optimized for **analytics and reporting**. 🚀
