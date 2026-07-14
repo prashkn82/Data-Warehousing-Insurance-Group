@@ -1,129 +1,106 @@
-Policy Performance Report
-1. Report Purpose
-The Policy Performance Report evaluates how insurance policies perform across time, regions, agents, and customer segments.
-It helps business teams understand premium trends, policy durations, coverage effectiveness, and overall profitability.
+# 📋 Policy Performance Report
 
-This report is a core analytical asset in the Data Warehousing Insurance Group project.
+> Evaluates how insurance policies perform across time, regions, agents, and customer segments.
 
-2. Data Sources Used
-Policy_Fact  
-Premium amounts, coverage, policy duration.
+---
 
-Policy_Dim  
-Policy type, status, attributes.
+## 1️⃣ Report Purpose
 
-Customer_Dim  
-Customer demographics and SCD Type 2 history.
+The **Policy Performance Report** evaluates how insurance policies perform across **time, regions, agents, and customer segments**. It helps business teams understand premium trends, policy durations, coverage effectiveness, and overall profitability.
 
-Agent_Dim  
-Agent performance and region.
+> This report is a **core analytical asset** in the Data Warehousing Insurance Group project.
 
-Date_Dim  
-Calendar hierarchy for policy start and end dates.
+---
 
-3. Key Report Sections
-A. Policy Summary Overview
-Shows:
+## 2️⃣ Data Sources Used
 
-Total active policies
+| Source | Provides |
+|---|---|
+| `Policy_Fact` | Premium amounts, coverage, policy duration |
+| `Policy_Dim` | Policy type, status, attributes |
+| `Customer_Dim` | Customer demographics and SCD Type 2 history |
+| `Agent_Dim` | Agent performance and region |
+| `Date_Dim` | Calendar hierarchy for policy start and end dates |
 
-Policy types (Life, Auto, Health, Property)
+---
 
-Policy status distribution (Active, Inactive, Lapsed)
+## 3️⃣ Key Report Sections
 
-Average premium amount
+### 🅰️ Policy Summary Overview
+- Total active policies
+- Policy types (Life, Auto, Health, Property)
+- Policy status distribution (Active, Inactive, Lapsed)
+- Average premium amount
+- Average coverage amount
 
-Average coverage amount
+### 🅱️ Premium Trend Analysis
+- Monthly premium collection
+- Quarterly premium growth
+- Year-over-year premium comparison
+- Region-wise premium contribution
 
-B. Premium Trend Analysis
-Includes:
+### 🅲️ Policy Duration Insights
+- Average policy duration
+- Short-term vs long-term policy distribution
+- Duration trends by policy type
 
-Monthly premium collection
+### 🅳️ Agent Performance Contribution
+- Policies sold per agent
+- Premium generated per agent
+- Region-wise agent ranking
 
-Quarterly premium growth
+### 🅴️ Customer Segment Analysis
+- Premium contribution by customer demographics
+- Policy type preference by age group
+- High-value customer segments
 
-Year‑over‑year premium comparison
+---
 
-Region‑wise premium contribution
+## 4️⃣ BO Features Used in This Report
 
-C. Policy Duration Insights
-Displays:
+| Feature | Details |
+|---|---|
+| 🔽 Drill-down | Policy → customer → agent |
+| 🎛️ Prompts | Policy type, region, agent, date range |
+| 📊 Charts & graphs | Premium trends |
+| 🧮 Cross-tab tables | Multi-dimensional analysis |
+| 🎨 Conditional formatting | High-premium policies, lapsed policies, underperforming regions |
 
-Average policy duration
+---
 
-Short‑term vs long‑term policy distribution
+## 5️⃣ Sample BO Query Logic (Semantic Layer)
 
-Duration trends by policy type
-
-D. Agent Performance Contribution
-Shows:
-
-Policies sold per agent
-
-Premium generated per agent
-
-Region‑wise agent ranking
-
-E. Customer Segment Analysis
-Includes:
-
-Premium contribution by customer demographics
-
-Policy type preference by age group
-
-High‑value customer segments
-
-4. BO Features Used in This Report
-Drill‑down from policy → customer → agent
-
-Prompts for filtering by:
-
-Policy type
-
-Region
-
-Agent
-
-Date range
-
-Charts & graphs for premium trends
-
-Cross‑tab tables for multi‑dimensional analysis
-
-Conditional formatting to highlight:
-
-High‑premium policies
-
-Lapsed policies
-
-Underperforming regions
-
-5. Sample BO Query Logic (Semantic Layer)
-Policy → Fact Join
-Code
+**Policy → Fact Join**
+```sql
 Policy_Dim.policy_key = Policy_Fact.policy_key
-Policy → Customer Join
-Code
+```
+
+**Policy → Customer Join**
+```sql
 Policy_Fact.customer_key = Customer_Dim.customer_key
-Policy → Agent Join
-Code
+```
+
+**Policy → Agent Join**
+```sql
 Policy_Fact.agent_key = Agent_Dim.agent_key
-Date Dimension Join
-Code
+```
+
+**Date Dimension Join**
+```sql
 Policy_Fact.date_key = Date_Dim.date_key
-6. Business Value
+```
+
+---
+
+## 6️⃣ Business Value
+
 The Policy Performance Report helps:
 
-Identify profitable policy types
+- 💰 Identify profitable policy types
+- 🗺️ Detect underperforming regions
+- 📈 Understand premium growth trends
+- 💡 Support pricing and underwriting decisions
+- 🧑‍💼 Improve agent productivity
+- 🎯 Optimize policy portfolio strategy
 
-Detect underperforming regions
-
-Understand premium growth trends
-
-Support pricing and underwriting decisions
-
-Improve agent productivity
-
-Optimize policy portfolio strategy
-
-It is widely used by underwriting, finance, and sales teams.
+> It is widely used by **underwriting, finance, and sales teams**. 🚀

@@ -1,135 +1,109 @@
-Claim Summary Report
-1. Report Purpose
-The Claim Summary Report provides a consolidated view of all insurance claims filed by customers.
-It helps claims teams, underwriting, and management analyse claim frequency, severity, settlement duration, and financial impact.
+# 💰 Claim Summary Report
 
-This report is one of the most critical analytical outputs in the Data Warehousing Insurance Group project.
+> A consolidated view of all insurance claims filed by customers.
 
-2. Data Sources Used
-Claim_Fact  
-Claim amount, settlement duration, claim date.
+---
 
-Claim_Type_Dim  
-Claim category, severity level, description.
+## 1️⃣ Report Purpose
 
-Customer_Dim  
-Customer demographics and SCD Type 2 history.
+The **Claim Summary Report** provides a consolidated view of all insurance claims filed by customers. It helps claims teams, underwriting, and management analyse **claim frequency, severity, settlement duration, and financial impact**.
 
-Policy_Dim  
-Policy type, coverage, status.
+> This report is one of the **most critical analytical outputs** in the Data Warehousing Insurance Group project.
 
-Date_Dim  
-Calendar hierarchy for claim dates.
+---
 
-3. Key Report Sections
-A. Claim Overview
-Shows:
+## 2️⃣ Data Sources Used
 
-Total claims filed
+| Source | Provides |
+|---|---|
+| `Claim_Fact` | Claim amount, settlement duration, claim date |
+| `Claim_Type_Dim` | Claim category, severity level, description |
+| `Customer_Dim` | Customer demographics and SCD Type 2 history |
+| `Policy_Dim` | Policy type, coverage, status |
+| `Date_Dim` | Calendar hierarchy for claim dates |
 
-Total claim amount
+---
 
-Average claim amount
+## 3️⃣ Key Report Sections
 
-Claim severity distribution
+### 🅰️ Claim Overview
+- Total claims filed
+- Total claim amount
+- Average claim amount
+- Claim severity distribution
+- Claim category breakdown
 
-Claim category breakdown
+### 🅱️ Claim Frequency Analysis
+- Claims per customer
+- Claims per policy
+- Claims per region
+- Monthly and yearly claim trends
 
-B. Claim Frequency Analysis
-Includes:
+### 🅲️ Claim Severity Insights
+- 🔴 High-severity claims
+- 🟡 Medium-severity claims
+- 🟢 Low-severity claims
+- Severity-wise financial impact
 
-Claims per customer
+### 🅳️ Settlement Duration Analysis
+- Average settlement duration
+- Long-pending claims
+- Fast-settled claims
+- Duration trends by claim category
 
-Claims per policy
+### 🅴️ Financial Impact Summary
+- Total claim payout
+- Net loss ratio
+- High-impact claim categories
+- Region-wise claim cost distribution
 
-Claims per region
+---
 
-Monthly and yearly claim trends
+## 4️⃣ BO Features Used in This Report
 
-C. Claim Severity Insights
-Displays:
+| Feature | Details |
+|---|---|
+| 🔽 Drill-down | Claim → customer → policy |
+| 🎛️ Prompts | Claim category, severity, region, date range |
+| 📊 Charts & graphs | Claim trends |
+| 🧮 Cross-tab tables | Multi-dimensional analysis |
+| 🎨 Conditional formatting | High-severity claims, long settlement durations, high-cost categories |
 
-High‑severity claims
+---
 
-Medium‑severity claims
+## 5️⃣ Sample BO Query Logic (Semantic Layer)
 
-Low‑severity claims
-
-Severity‑wise financial impact
-
-D. Settlement Duration Analysis
-Shows:
-
-Average settlement duration
-
-Long‑pending claims
-
-Fast‑settled claims
-
-Duration trends by claim category
-
-E. Financial Impact Summary
-Includes:
-
-Total claim payout
-
-Net loss ratio
-
-High‑impact claim categories
-
-Region‑wise claim cost distribution
-
-4. BO Features Used in This Report
-Drill‑down from claim → customer → policy
-
-Prompts for filtering by:
-
-Claim category
-
-Severity
-
-Region
-
-Date range
-
-Charts & graphs for claim trends
-
-Cross‑tab tables for multi‑dimensional analysis
-
-Conditional formatting to highlight:
-
-High‑severity claims
-
-Long settlement durations
-
-High‑cost claim categories
-
-5. Sample BO Query Logic (Semantic Layer)
-Claim → Customer Join
-Code
+**Claim → Customer Join**
+```sql
 Claim_Fact.customer_key = Customer_Dim.customer_key
-Claim → Policy Join
-Code
+```
+
+**Claim → Policy Join**
+```sql
 Claim_Fact.policy_key = Policy_Dim.policy_key
-Claim → Claim Type Join
-Code
+```
+
+**Claim → Claim Type Join**
+```sql
 Claim_Fact.claim_type_key = Claim_Type_Dim.claim_type_key
-Date Dimension Join
-Code
+```
+
+**Date Dimension Join**
+```sql
 Claim_Fact.date_key = Date_Dim.date_key
-6. Business Value
+```
+
+---
+
+## 6️⃣ Business Value
+
 The Claim Summary Report helps:
 
-Identify high‑risk customers
+- ⚠️ Identify high-risk customers
+- 💸 Detect costly claim categories
+- ⏱️ Understand settlement efficiency
+- 🕵️ Support fraud detection
+- 💡 Improve underwriting and pricing strategies
+- 📊 Provide management with clear claim trends
 
-Detect costly claim categories
-
-Understand settlement efficiency
-
-Support fraud detection
-
-Improve underwriting and pricing strategies
-
-Provide management with clear claim trends
-
-It is one of the most important reports for claims and risk management teams.
+> It is one of the **most important reports** for claims and risk management teams. 🚀

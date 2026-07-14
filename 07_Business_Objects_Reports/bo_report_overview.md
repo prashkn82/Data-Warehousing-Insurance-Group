@@ -1,79 +1,78 @@
-Business Objects Report Overview
-1. Introduction
-Business Objects (BO) is the reporting and analytics layer used in the Data Warehousing Insurance Group project.
-It enables business users to generate interactive, drill‑down reports based on the Oracle 9i data warehouse populated through Informatica ETL workflows.
+# 📊 Business Objects Report Overview
 
-BO provides a user‑friendly interface for querying fact and dimension tables, visualising trends, and making data‑driven decisions.
+> The reporting and analytics layer that transforms the **Insurance Data Warehouse** into actionable business insights.
 
-2. Key BO Components Used
-Universe Designer  
-Builds the semantic layer mapping DW tables to business terms.
+---
 
-Web Intelligence (WebI)  
-Used for creating interactive reports and dashboards.
+## 1️⃣ Introduction
 
-BO Repository  
-Stores universes, reports, and security metadata.
+**Business Objects (BO)** is the reporting and analytics layer used in the Data Warehousing Insurance Group project. It enables business users to generate **interactive, drill-down reports** based on the Oracle 9i data warehouse populated through Informatica ETL workflows.
 
-Report Scheduler  
-Automates report delivery via email or shared folders.
+BO provides a **user-friendly interface** for querying fact and dimension tables, visualising trends, and making data-driven decisions.
 
-3. Universe Design Overview
-The BO Universe acts as a bridge between the technical DW schema and business‑friendly reporting terms.
+---
 
-Universe Components
-Classes → Logical groupings (Customer, Policy, Claims)
+## 2️⃣ Key BO Components Used
 
-Objects → Columns mapped from DW tables
+| Component | Purpose |
+|---|---|
+| 🎨 Universe Designer | Builds the semantic layer mapping DW tables to business terms |
+| 📈 Web Intelligence (WebI) | Used for creating interactive reports and dashboards |
+| 🗂️ BO Repository | Stores universes, reports, and security metadata |
+| ⏰ Report Scheduler | Automates report delivery via email or shared folders |
 
-Joins → Define relationships between fact and dimension tables
+---
 
-Contexts → Prevent fan traps and chasm traps
+## 3️⃣ Universe Design Overview
 
-Benefits
-Simplifies complex SQL
+The **BO Universe** acts as a bridge between the technical DW schema and business-friendly reporting terms.
 
-Ensures consistent business definitions
+### 🧩 Universe Components
 
-Enables drag‑and‑drop report creation
+| Component | Description |
+|---|---|
+| Classes | Logical groupings (Customer, Policy, Claims) |
+| Objects | Columns mapped from DW tables |
+| Joins | Define relationships between fact and dimension tables |
+| Contexts | Prevent fan traps and chasm traps |
 
-4. Reports Developed in This Project
-Customer Profile Report
-Shows customer demographics, policy history, and claim activity.
+### ✅ Benefits
 
-Policy Performance Report
-Analyses premium trends, coverage amounts, and policy durations.
+- Simplifies complex SQL
+- Ensures consistent business definitions
+- Enables drag-and-drop report creation
 
-Claim Summary Report
-Displays claim amounts, settlement durations, and claim categories.
+---
 
-Agent Productivity Report
-Evaluates agent performance based on policy sales and claim handling.
+## 4️⃣ Reports Developed in This Project
 
-Premium Trend Dashboard
-Visualises premium collection across months, quarters, and years.
+| Report | Description |
+|---|---|
+| 👤 Customer Profile Report | Customer demographics, policy history, and claim activity |
+| 📋 Policy Performance Report | Premium trends, coverage amounts, and policy durations |
+| 💰 Claim Summary Report | Claim amounts, settlement durations, and claim categories |
+| 🧑‍💼 Agent Productivity Report | Agent performance based on policy sales and claim handling |
+| 📈 Premium Trend Dashboard | Premium collection across months, quarters, and years |
 
-5. BO Features Utilised
-Drill‑down & drill‑up navigation
+---
 
-Filters & prompts for dynamic reporting
+## 5️⃣ BO Features Utilised
 
-Cross‑tab tables for multi‑dimensional analysis
+- 🔽 Drill-down & drill-up navigation
+- 🎛️ Filters & prompts for dynamic reporting
+- 📊 Cross-tab tables for multi-dimensional analysis
+- 📈 Charts & graphs for visual insights
+- 📤 Scheduled report delivery for management teams
 
-Charts & graphs for visual insights
+---
 
-Scheduled report delivery for management teams
+## 6️⃣ Outcome
 
-6. Outcome
-Business Objects provides a powerful reporting layer that transforms warehouse data into actionable insights.
-It enables:
+Business Objects provides a **powerful reporting layer** that transforms warehouse data into actionable insights, enabling:
 
-Faster decision‑making
+- ⚡ Faster decision-making
+- 🎯 Accurate KPI tracking
+- 📊 Clear visualization of insurance trends
+- 🙋 Self-service analytics for business users
 
-Accurate KPI tracking
-
-Clear visualization of insurance trends
-
-Self‑service analytics for business users
-
-BO is the final and most visible layer of the insurance data warehouse ecosystem.
+> BO is the **final and most visible layer** of the insurance data warehouse ecosystem. 🚀
