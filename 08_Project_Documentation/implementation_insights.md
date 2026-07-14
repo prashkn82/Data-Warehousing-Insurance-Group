@@ -1,82 +1,68 @@
-1. Introduction
-This document captures the most valuable insights gained during the implementation of the Data Warehousing Insurance Group project.
-Instead of simply listing lessons learned, it focuses on practical, actionable insights that directly improve ETL design, DW modeling, and reporting workflows.
+# 💡 Implementation Insights
 
-These insights serve as a guide for future enhancements and new data warehousing initiatives.
+> Practical, actionable lessons from building the **Insurance Data Warehouse** — captured to guide future enhancements and new projects.
 
-2. Technical Implementation Insights
-A. Clean Source Data Determines ETL Stability
-Unclean data caused lookup failures, incorrect surrogate key mappings, and SCD inconsistencies.
-Insight: Implement strong cleansing rules early in the pipeline to prevent downstream issues.
+---
 
-B. Lookup Caching Is Essential for Performance
-Large dimensions (Customer, Policy) slowed down workflows.
-Insight: Use persistent cache and sorted input to significantly reduce session runtime.
+## 1️⃣ Introduction
 
-C. SCD Type 2 Requires Rigorous Date Management
-Incorrect end dates created overlapping historical records.
-Insight: Always validate effective_start_dt, effective_end_dt, and current_flag during ETL.
+This document captures the most valuable insights gained during the implementation of the Data Warehousing Insurance Group project. Instead of simply listing lessons learned, it focuses on **practical, actionable insights** that directly improve ETL design, DW modeling, and reporting workflows.
 
-D. Star Schema Simplifies Reporting
-A clean fact–dimension model made BO Universe creation straightforward.
-Insight: Keep schema design simple, consistent, and business‑friendly.
+> These insights serve as a **guide for future enhancements** and new data warehousing initiatives.
 
-E. Workflow Scheduling Must Align with Source Refresh
-Some source systems refreshed late at night.
-Insight: Schedule ETL after source refresh windows to avoid partial loads.
+---
 
-3. Functional Implementation Insights
-A. Business Definitions Must Be Standardized
-Teams used different definitions for “active policy,” “high‑severity claim,” and “premium category.”
-Insight: Create a unified business glossary before building reports.
+## 2️⃣ Technical Implementation Insights
 
-B. SCD Strategy Must Be Discussed Early
-Some attributes initially used Type 1 but later required history.
-Insight: Confirm SCD requirements with business users before ETL development.
+| # | Issue Observed | 💡 Insight |
+|---|---|---|
+| A | Unclean data caused lookup failures, incorrect surrogate key mappings, and SCD inconsistencies | Implement strong **cleansing rules** early in the pipeline to prevent downstream issues |
+| B | Large dimensions (Customer, Policy) slowed down workflows | Use **persistent cache** and **sorted input** to significantly reduce session runtime |
+| C | Incorrect end dates created overlapping historical records | Always validate `effective_start_dt`, `effective_end_dt`, and `current_flag` during ETL |
+| D | Fact–dimension model made BO Universe creation straightforward | Keep schema design **simple, consistent, and business-friendly** |
+| E | Some source systems refreshed late at night | Schedule ETL **after source refresh windows** to avoid partial loads |
 
-C. Reporting Requirements Evolve Over Time
-New dashboards were requested after initial deployment.
-Insight: Build flexible universes and reusable ETL components to support future changes.
+---
 
-4. Operational Implementation Insights
-A. Detailed Error Logging Saves Hours of Debugging
-Missing logs made troubleshooting difficult.
-Insight: Implement comprehensive session logs and error tables.
+## 3️⃣ Functional Implementation Insights
 
-B. Incremental Loads Are More Efficient
-Full loads were slow and unnecessary.
-Insight: Use change‑data logic for daily ETL runs.
+| # | Issue Observed | 💡 Insight |
+|---|---|---|
+| A | Teams used different definitions for "active policy," "high-severity claim," and "premium category" | Create a **unified business glossary** before building reports |
+| B | Some attributes initially used Type 1 but later required history | Confirm **SCD requirements** with business users before ETL development |
+| C | New dashboards were requested after initial deployment | Build **flexible universes** and reusable ETL components to support future changes |
 
-C. BO Report Scheduling Needs Monitoring
-Some scheduled reports failed silently.
-Insight: Set up monitoring alerts for BO scheduler failures.
+---
 
-5. Team & Process Insights
-A. ETL & Reporting Teams Must Collaborate Early
-BO team needed clarity on surrogate keys and SCD logic.
-Insight: Conduct joint design sessions before development begins.
+## 4️⃣ Operational Implementation Insights
 
-B. Version Control Prevents Mapping Conflicts
-Multiple developers overwrote mappings.
-Insight: Use Git or repository versioning for ETL, SQL, and documentation.
+| # | Issue Observed | 💡 Insight |
+|---|---|---|
+| A | Missing logs made troubleshooting difficult | Implement comprehensive **session logs and error tables** |
+| B | Full loads were slow and unnecessary | Use **change-data logic** for daily ETL runs |
+| C | Some scheduled reports failed silently | Set up **monitoring alerts** for BO scheduler failures |
 
-C. Documentation Accelerates Onboarding
-Lack of documentation slowed down new team members.
-Insight: Maintain updated mapping sheets, data dictionaries, and workflow diagrams.
+---
 
-6. Summary
+## 5️⃣ Team & Process Insights
+
+| # | Issue Observed | 💡 Insight |
+|---|---|---|
+| A | BO team needed clarity on surrogate keys and SCD logic | Conduct **joint design sessions** before development begins |
+| B | Multiple developers overwrote mappings | Use **Git or repository versioning** for ETL, SQL, and documentation |
+| C | Lack of documentation slowed down new team members | Maintain updated **mapping sheets, data dictionaries, and workflow diagrams** |
+
+---
+
+## 6️⃣ Summary
+
 The project reinforced the importance of:
 
-Clean and validated source data
+- ✅ Clean and validated source data
+- 🕘 Strong SCD design
+- ⚡ Efficient ETL workflows
+- 📖 Clear business definitions
+- 📚 Robust documentation
+- 🤝 Cross-team collaboration
 
-Strong SCD design
-
-Efficient ETL workflows
-
-Clear business definitions
-
-Robust documentation
-
-Cross‑team collaboration
-
-These insights form a foundation for future improvements and new data warehousing projects.
+> These insights form a **foundation for future improvements** and new data warehousing projects. 🚀
